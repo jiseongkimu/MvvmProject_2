@@ -7,7 +7,10 @@ import com.example.mvvmproject_2.R
 import com.example.mvvmproject_2.room.Contact
 import com.example.mvvmproject_2.databinding.ItemContactBinding
 
-class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
+class ContactAdapter(
+    val contactItemClick: (Contact) -> Unit,
+    val contactItemLongClick: (Contact) -> Unit
+) : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
     private var listItems: List<Contact>? = null
 
     fun sublitList(list: List<Contact>){
@@ -28,7 +31,10 @@ class ContactAdapter() : RecyclerView.Adapter<ContactAdapter.ViewHolder>() {
         private val binding: ItemContactBinding
     ) : RecyclerView.ViewHolder(binding.root){
         fun bind(item: Contact){
-            // binding.itemTvInitial = Contact
+            binding.itemTvInitial.text = item.initial.toString()
+            binding.itemTvName.text = item.name
+            binding.itemTvNumber.text = item.number
+
         }
     }
 

@@ -2,8 +2,12 @@ package com.example.mvvmproject_2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mvvmproject_2.adapter.ContactAdapter
 import com.example.mvvmproject_2.room.Contact
 import com.example.mvvmproject_2.viewModel.ContactViewModel
 import com.example.mvvmproject_2.databinding.ItemContactBinding
@@ -16,6 +20,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val adpater = ContactAdapter({ contact ->
+            //
+        }, { contact ->
+            deleteDialog(contact)
+        })
+
 
         /*
         * ContactViewModel 인스턴스를 만들고 이를 관찰하는 역할을 수행
@@ -35,7 +46,17 @@ class MainActivity : AppCompatActivity() {
          */
 
         contactViewModel.getAll().observe(this, Observer<List<Contact>> { contacts ->
-            // update UI
+            adapter.set
         })
+    }
+
+    private fun deleteDialog(contact: Contact){
+        val builder = AlertDialog.Builder(this)
+        builder.setMessage("Delete selected contact?")
+            .setNegativeButton("No"){ _, _ ->}
+            .setPositiveButton("YES") { _, _ ->
+                contactViewModel.delete(contact)
+            }
+        builder.show()
     }
 }
