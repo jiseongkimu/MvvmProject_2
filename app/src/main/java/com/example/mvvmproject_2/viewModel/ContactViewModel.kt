@@ -1,10 +1,10 @@
-package com.example.mvvmproject_2.ViewModel
+package com.example.mvvmproject_2.viewModel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import com.example.mvvmproject_2.Repository.ContactRepository
-import com.example.mvvmproject_2.Room.Contact
+import com.example.mvvmproject_2.repository.ContactRepository
+import com.example.mvvmproject_2.room.Contact
 
 /*
 * UI를 위한 데이터를 가지고 있으며 구성이 변경되어도 살아남는다.

@@ -4,8 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.example.mvvmproject_2.Room.Contact
-import com.example.mvvmproject_2.ViewModel.ContactViewModel
+import com.example.mvvmproject_2.room.Contact
+import com.example.mvvmproject_2.viewModel.ContactViewModel
 import com.example.mvvmproject_2.databinding.ItemContactBinding
 
 class MainActivity : AppCompatActivity() {

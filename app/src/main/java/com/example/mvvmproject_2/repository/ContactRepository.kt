@@ -1,10 +1,10 @@
-package com.example.mvvmproject_2.Repository
+package com.example.mvvmproject_2.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.example.mvvmproject_2.Room.Contact
-import com.example.mvvmproject_2.Room.ContactDao
-import com.example.mvvmproject_2.Room.ContactDatabase
+import com.example.mvvmproject_2.room.Contact
+import com.example.mvvmproject_2.room.ContactDao
+import com.example.mvvmproject_2.room.ContactDatabase
 import java.lang.Exception
 
 /*

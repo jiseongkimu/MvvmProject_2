@@ -6,7 +6,7 @@
 
         <variable
             name="contact"
-            type="com.example.mvvmproject_2.Room.Contact" />
+            type="com.example.mvvmproject_2.room.Contact" />
 
         <variable
             name="main"
